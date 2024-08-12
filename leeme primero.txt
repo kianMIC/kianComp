@@ -1,0 +1,8 @@
+Este es mi proyecto en php.
+es el mismo que realice en js, pero ahora con mejoras como las siguientes: 
+-uso de sesiones
+-registro de usuarios ya funcional.
+-inicio de sesiones, con roles de administrador y de usuario normal. para entrar como administrador los datos son los siguientes (correo: ney_apolinario1@hotmail.com contraseña: Ap660534919)
+-sitio web dinamico.
+-formulario para agregar productos.
+-funcion de carrito de compra.
