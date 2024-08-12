@@ -1,0 +1,670 @@
+/*estilos globales*/
+*{
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+.negrita{
+	font-weight: bold;
+}
+.linea{
+	border-bottom: 3px solid #0c45c5;
+}
+/*estilos del header general*/
+
+header{
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	position: relative;
+	width: 80%;
+	background-color: #fff;
+	box-shadow:  0 4px 25px -22px black;
+	z-index: 10;
+	/*top: -27px;*/
+}
+header.dark{
+	background: #121212;
+}
+header nav.perfiles{
+	display: flex;
+	align-items: center;
+}
+header nav.perfiles ul{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+header nav.perfiles ul li{
+	display: flex;
+	justify-content: space-between;
+}
+header nav.perfiles ul li a{
+	display: flex;
+	padding: 15px;
+	color: black;
+	transition: all 300ms;
+}
+header nav.perfiles ul li a:hover{
+	color: #46a2fd;
+}
+header nav.perfiles ul li a i{
+	margin-right: 10px;
+}
+nav ul li.apartados_perfil:hover ul.subMenu{
+	visibility: visible;
+	opacity: 1;
+}
+nav ul li.apartados_perfil ul.subMenu{
+	position: absolute;
+    display: initial;
+    background-color: white;
+    top: 48px;
+    border-radius: 0 0 20px 20px;
+    width: 20%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    box-shadow: 0 4px 25px -22px black;
+}
+nav ul li.apartados_perfil ul.subMenu a{
+	transition: opacity 1.5s;
+    display: block;
+    width: 100%;
+}
+
+
+/*estilos del Header "modo oscuro"*/
+	
+.switch{
+	height: 30px;
+	background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    align-items: center;
+}
+.switch:after{
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: #F1F1F1;
+	top: 0;
+	left: 0;
+	right: unset;
+	border-radius: 100px;
+	transition: .3 ease all;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+.switch.active{
+	background: #476dc1;
+	color: #000;
+}
+.switch.active:after{
+	right: 0;
+	left: unset;
+}
+.switch span{
+	width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+/*TODOS LOS ESTILOS EN MODO OSCURO*/
+body.dark{
+	background: #121212;
+}
+
+
+body.dark header{
+	background: #121212;
+	box-shadow: 0 4px 25px -22px white;
+}
+body.dark header .perfiles ul li a{
+	color: white;
+}
+body.dark header .perfiles ul li a:hover{
+	color: #46a2fd;
+}
+body.dark header #ctn-icon-search i{
+	color: white;
+}
+body.dark header #ctn-icon-search i:hover{
+	color: #46a2fd;
+}
+body.dark #ctn-bars-search{
+	background: #121212;
+}
+
+
+body.dark h3{
+	color: white;
+}
+body.dark main #interes .item a span{
+	color: white;
+}
+body.dark main #interes .item a:hover span{
+	color: #46a2fd
+}
+
+
+body.dark footer{
+	box-shadow: 0 -45px 69px -91px white;
+}
+body.dark footer p{
+	color: white;
+}
+body.dark footer #redes ul li a{
+	color: white;
+}
+body.dark #wrapper #contenido #blogs p{
+	color: white;
+}
+body.dark #blogs ul li, body.dark #blogs ol li{
+	color: #fff;
+
+}
+body.dark nav ul li.apartados_perfil ul.subMenu{
+	background-color: #121212;
+	box-shadow: 0 4px 25px -22px white;
+}
+
+/*estilos para el Buscardor interno*/
+
+#ctn-icon-search{
+/*	position: absolute;*/
+	right: 20px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#ctn-icon-search i{
+	font-size: 18px;
+    cursor: pointer;
+    transition: all 300ms;
+    padding: 20px;
+}
+#ctn-icon-search i:hover{
+	color: #46a2fd;
+}
+#ctn-bars-search{
+	position: absolute;
+	width: 100%;
+	top: -15px;
+	background: #fff;
+	padding: 20px;
+	z-index: 9;
+	transition: all 600ms;
+}
+#ctn-bars-search .dark{
+	background: #121212;
+}
+#ctn-bars-search input{
+	display: block;
+	width: 70%;
+	margin: auto;
+	padding: 10px;
+	font-size: 18px;
+	outline: 0;
+}
+#box-search{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 135px;
+	width: 68.5%;
+	background: #fff;
+	z-index: 8;
+	display: none;
+}
+#box-search li a{
+	display: block;
+	width: 100%;
+	color: #777777;
+	padding: 12px 20px;
+}
+#box-search li a:hover{
+	background-color: #f3f3f3;
+}
+#box-search li a i{
+	margin-right: 10px;
+}
+#cover-ctn-search{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 7;
+	display: none;
+}
+
+/*estilos del body*/
+
+#wrapper{
+	width: 80%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+
+}
+
+
+
+
+/*ESTILOS DE CATEGORIAS MAS RELEVANTES*/
+#contenido{
+	width: 83%;
+}
+#contenido div#relevantes .categorias{
+	display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+h3{
+	font-size: 25px;
+	margin: 20px 0 10px 0;
+	color: #6d8edc;
+}
+#relevantes{
+	display: flex;
+    flex-direction: column;
+}
+#relevantes a{
+	margin: 0 10px 0 10px;
+}
+#relevantes a div{
+	width: 225px;
+	height: 225px;
+}
+#relevantes a div img{
+	width: 100%;
+	height: 192.66px;
+}
+#relevantes a span{
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #0c45c5;
+	width: 100%;
+	padding: 10px 0;
+	background-color:#9eb5e8 ;
+}
+
+
+
+/*CATEGORIAS DE INTERES*/
+#interes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.item{
+	width: 30%;
+	text-align: center;
+}
+.item a{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.item a span{
+	color: black;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.item a:hover span{
+	color: #46a2fd;
+}
+.item a div img{
+	width: 300px;
+	height: 300px;
+}
+.item a span.precio{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+
+/*ESTILOS DEL BLOG*/
+#blog{
+	display: flex;
+	justify-content: space-between;
+}
+div.LinkBlog{
+	width: 30%;
+}
+.link{
+	display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: center;
+}
+.imagenBlog1{
+	background: url(../img/fondoBlog1.jpg) no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	height: 203px;
+}
+.imagenBlog2{
+	background: url(../img/fondoBlog2.jpg) no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	height: 203px;
+}
+.imagenBlog3{
+	background: url(../img/fondoBlog3.jpg) no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	height: 203px;
+}
+.link section{
+	background-color: #fff;
+    width: 80%;
+    margin-top: -45px;
+    padding: 20px;
+}
+.link section h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+p.detalles{
+	color: #888;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+/*CSS PARA LOS BLOGS*/
+
+.ajax nav{
+	width: 80%;
+	margin: 0 auto;
+}
+.ajax nav ul{
+	display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #0c45c5;
+    justify-content: center;
+}
+.ajax nav ul li{
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.ajax nav ul li:nth-child(2){
+	margin-right: 15px;
+	margin-left: 15px;
+}
+#blogs{
+	width: 75%;
+	margin: 0 auto;
+}
+#blogs h1{
+	font-size: 30px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	text-align: center;
+	color: #6d8edc;
+
+}
+#blogs h2{
+	color: #6d8edc;
+    font-size: 30px;
+    margin: 20px 0px;
+}
+#blogs p{
+	font-size: 18px;
+    margin: 20px 0;
+}
+#blogs ul{
+	margin: 0 auto;
+    width: 75%;
+    font-size: 18px;
+}
+#blogs ul li{
+	margin-bottom: 10px;
+}
+#blogs ul li:before{
+	content: " ";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+    background-color: #0c45c5;
+    border-radius: 2px;
+}
+#blogs ol{
+	margin: 0 auto;
+    width: 60%;
+    list-style: decimal;
+    font-size: 18px;
+}
+#blogs ol li{
+	margin-bottom: 10px;
+}
+
+/*CSS PARA LOS DETALLES DE LOS PRODCUTOS*/
+
+.nombreP{
+	display: none;
+}
+.producto{
+	display: flex;
+	justify-content: space-between;
+}
+.img img{
+	width: 100%;
+	height: 100%;
+}
+.detalles{
+	width: 80%;
+	    margin-left: 20px;
+}
+.detalles h2{
+	font-weight: bold;
+    font-size: 22px;
+    color: #2c5ece;
+    margin-bottom: 20px;
+}
+.detalles p.precio{
+	font-size: 20px;
+    font-weight: bold;
+    color: #6d8edc;
+    margin-bottom: 20px;
+}
+p.descripcion span{
+	display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0c45c5;
+}
+p.descripcion{
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+.vinculos{
+	display: flex;
+    justify-content: flex-end;
+}
+.vinculos a{
+	margin: 10px;
+    padding: 10px;
+    background-color: #6d8edc;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+/*EMPEZAMOS CON EL FOOTER*/
+
+footer{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	box-shadow: 0 -45px 69px -91px black;;
+	
+}
+#contactos{
+	display: flex;
+	width: 80%;
+	justify-content: space-around;
+}
+
+#map{
+	height: 300px;
+	width: 300px;
+}
+#ubicacion p, #redes p{
+	font-size: 18px;
+	margin: 20px 0;
+    font-weight: bold;
+}
+#map iframe{
+	height: 100%;
+	width: 100%;
+}
+#redes ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#redes ul li{
+	font-size: 20px;
+	margin: 0 0 10px 0;
+}
+#redes ul li a{
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	color: black;
+	font-weight: bold;
+}
+#redes ul li a i{
+	font-size: 30px;
+    margin-right: 15px;
+}
+#redes ul li a.facebook i{
+	color: #1877f2;
+}
+#redes ul li a.twitter i{
+	color: #1da1f2;
+}
+#redes ul li a.instagram i{
+	color: #9b3591;
+}
+#redes ul li a.discord i{
+	color: #535fee;
+}
+
+
+/*AQUI EL CSS PARA LA PAGINA RESPONSIVE*/
+@media screen and (max-width: 759px) {
+	header #logo{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 300px) and (max-width: 759px){
+	#wrapper{
+		width: 95%;
+	}
+
+	/*CSS DEL HEADER*/
+	header{
+		display: flex;
+    	justify-content: center;
+    	margin: auto;
+    	position: relative;
+    	width: 95%;
+    	background-color: #fff;
+    	box-shadow: 0 4px 25px -22px black;
+    	z-index: 10;
+	}
+	header #logo{
+		display: none;
+	}
+	nav ul li.apartados_perfil ul.subMenu {
+	    width: 50%;
+	}
+
+
+	/*CSS DEL BODY*/
+	#contenido{
+		width: 100%;
+	}
+	#interes{
+		display: flex;
+		text-align: center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.item{
+		width: 80%;
+	}
+	/*CSS DEL BLOG*/
+	#blog{
+		display: flex;
+    	justify-content: center;
+    	flex-wrap: wrap;
+	}
+	div.LinkBlog{
+		width: 90%;
+	}
+	/*CSS DEL FOOTER*/
+	#contactos{
+		display: flex;
+    	width: 95%;
+    	justify-content: center;
+    	flex-wrap: wrap;
+	}
+
+}
+@media screen and (min-width: 760px) and (max-width: 1366px){
+	header nav.perfiles {
+    	margin-right: 60px;
+    	display: flex;
+    	align-items: center;
+    	width: initial;
+		height: 50px;
+	}
+	#interes{
+		display: flex;
+		text-align: center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.item{
+		width: 50%;
+    text-align: center;
+    margin: 0 5px;
+	}
+	#blog {
+    	display: flex;
+    	justify-content: center;
+    	flex-wrap: wrap;
+	}
+	div.LinkBlog{
+		width: 40	%;
+	}
+}
+
